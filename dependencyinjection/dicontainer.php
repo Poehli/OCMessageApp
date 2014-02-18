@@ -1,17 +1,16 @@
 <?php
 
-namespace OCA\test\DependencyInjection;
-
-use OCA\test\Controller\MessagesQuery;
+namespace OCA\OCMessage\DependencyInjection;
 
 use \OCA\AppFramework\DependencyInjection\DIContainer as BaseContainer;
 
-use \OCA\test\Controller\PageController;
+use \OCA\OCMessage\Controller\PageController;
+use \OCA\OCMessage\Db\MessageRepository;
 
 class DIContainer extends BaseContainer {
 
     public function __construct(){
-        parent::__construct('test');
+        parent::__construct('ocmessage');
 
         // use this to specify the template directory
        // $this['TwigTemplateDirectory'] = __DIR__ . '/../templates';
@@ -20,8 +19,8 @@ class DIContainer extends BaseContainer {
             return new PageController($c['API'], $c['Request']);
         });
         
-        $this['messages'] = $this->share(function($c){
-        	return new MessagesQuery();
+        $this['MessageRepository'] = $this->share(function($c){
+        	return new MessageRepository();
         });
     }
 

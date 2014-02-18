@@ -1,12 +1,12 @@
 <?php
  
-namespace OCA\test\Controller;
+namespace OCA\OCMessage\Db;
 
 use \OCP\User;
 use \OCP\DB;
 use \OCA\AppFramework\Controller\Controller;
 
-class MessagesQuery extends Controller{
+class MessageRepository extends Controller {
 	private $userId;
 	public function __construct($user=""){
 		if ($user == ""){

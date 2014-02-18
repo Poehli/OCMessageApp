@@ -1,22 +1,19 @@
 <?php
 
-namespace OCA\test\Controller;
+use \OCA\OCMessage\Controller\PageController;
 
-//require '/var/www/oc_apps/test/controller/messages.php';
+use \OCA\OCMessage\DependencyInjection\DIContainer;
 
-use \OCA\test\Controller\PageController;
-
-use \OCA\test\DependencyInjection\DIContainer;
 // dont break owncloud when the appframework is not enabled
 if(\OCP\App::isEnabled('appframework')){
 	
-    $api = new \OCA\AppFramework\Core\API('test');
+    $container = new DIContainer();
+    $api = $container['API'];
 
-    $message = new MessagesQuery();
     $logo = $name =  "";
-    if ($message->hasUnreadMessage()){
+    if ($container['MessageRepository']->hasUnreadMessage()){
     	$logo = "new_msg.png";
-    	$name = "Neu (".$message->unreadMessageCount().")";
+    	$name = "Neu (".$container['MessageRepository']->unreadMessageCount().")";
     } else {
     	$logo = "no_new_msg.png";
     	$name = "Nachrichten";
@@ -32,7 +29,7 @@ if(\OCP\App::isEnabled('appframework')){
       'order' => 10,
 
       // the route that will be shown on startup
-      'href' => $api->linkToRoute('test_index'),
+      'href' => $api->linkToRoute('ocmessage_index'),
 
       // the icon that will be shown in the navigation
       // this file needs to exist in img/example.png
