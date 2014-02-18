@@ -1,0 +1,13 @@
+<?php
+
+namespace OCA\MyApp;
+
+use \OCA\AppFramework\App;
+use \OCA\MyApp\DependencyInjection\DIContainer;
+
+$this->create('myapp_index', '/')->action(
+    function($params){
+        // call the index method on the class PageController
+        App::main('PageController', 'index', $params, new DIContainer());
+    }
+);
