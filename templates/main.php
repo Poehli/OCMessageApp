@@ -1,10 +1,10 @@
 
 <?php 
-\OCP\Util::addScript("test", "angular");
-\OCP\Util::addScript('appframework', 'public/app');
-\OCP\Util::addScript("test", "messages");
-//\OCP\Util::addScript("test", "test");
-\OCP\Util::addStyle("test", "test");
+//\OCP\Util::addScript("test", "angular");
+//\OCP\Util::addScript('appframework', 'public/app');
+\OCP\Util::addScript("ocmessage", "messages");
+//\OCP\Util::addScript("ocmessage", "ocmessage");
+\OCP\Util::addStyle("ocmessage", "style");
 ?>
 
 <div>

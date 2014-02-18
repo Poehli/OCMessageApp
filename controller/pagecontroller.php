@@ -1,6 +1,6 @@
 <?php
 
-namespace OCA\test\Controller;
+namespace OCA\OCMessage\Controller;
 
 use \OCA\AppFramework\Controller\Controller;
 use \OCA\AppFramework\Core\API;

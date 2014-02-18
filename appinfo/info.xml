@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <info>
-	<id>notes</id>
-	<name>Notes</name>
+	<id>ocmessage</id>
+	<name>OCMessage</name>
 	<licence>AGPL</licence>
-	<author>Bernhard Posselt, Jan-Christoph Borchardt</author>
+	<author></author>
 	<require>6</require>
 	<version>0.6</version>
-	<description>Distraction-free notes and writing</description>
+	<description></description>
 </info>
 
