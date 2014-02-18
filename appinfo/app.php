@@ -2,7 +2,7 @@
 
 namespace OCA\test\Controller;
 
-require '/var/www/oc_apps/test/controller/messages.php';
+//require '/var/www/oc_apps/test/controller/messages.php';
 
 use \OCA\test\Controller\PageController;
 
@@ -12,7 +12,7 @@ if(\OCP\App::isEnabled('appframework')){
 	
     $api = new \OCA\AppFramework\Core\API('test');
 
-    $message = new \OCA\test\Controller\MessagesQuery();
+    $message = new MessagesQuery();
     $logo = $name =  "";
     if ($message->hasUnreadMessage()){
     	$logo = "new_msg.png";
